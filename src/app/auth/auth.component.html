@@ -1,0 +1,18 @@
+<div>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+    <ng-content select="h3"></ng-content>
+    <label>
+      Email address
+      <input type="email" name="email" #email ngModel>
+    </label>
+    <label>
+      Password
+      <input type="password" name="password" ngModel>
+    </label>
+    <ng-content select="app-auth-remember"></ng-content>
+    <div *ngIf="showMessage">
+      You will be logged in for 30 days
+    </div>
+    <ng-content select="button"></ng-content>
+  </form>
+</div>
